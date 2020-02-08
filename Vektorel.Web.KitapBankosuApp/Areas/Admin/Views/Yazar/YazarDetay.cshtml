@@ -1,0 +1,24 @@
+﻿@using Vektorel.Web.KitapBankosuApp.Models
+@model Yazar
+@{
+    ViewBag.Title = "YazarDetay";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>YazarDetay</h2>
+
+<table class="table">
+    <tr>
+        <td>Yazar Adı</td>
+        <td> : @Model.YazarAd</td>
+    </tr>
+    <tr>
+        <td>Yazar Soyadı</td>
+        <td> : @Model.YazarSoyad</td>
+    </tr>
+    <tr>
+        <td>Doğum Tarihi</td>
+        <td> : @Model.DogumTarih</td>
+    </tr>
+
+</table>

@@ -1,0 +1,35 @@
+﻿@using Vektorel.Web.KitapBankosuApp.Models
+@model IEnumerable<Yazar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Yazar Yönetimi</h2>
+<a href="/Admin/Yazar/YazarEkle" class="btn btn-success">Yazar Ekle</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Adı</th>
+            <th>Soyadı</th>
+            <th>Doğum Tarihi</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.YazarAd</td>
+                <td>@item.YazarSoyad</td>
+                <td>@item.DogumTarih</td>
+                <td>
+                    <a href="Admin/Yazar/YazarDetay/@item.YazarId" class="btn btn-primary">Detaylar</a>&nbsp;
+                    <a href="#" class="btn btn-danger">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
