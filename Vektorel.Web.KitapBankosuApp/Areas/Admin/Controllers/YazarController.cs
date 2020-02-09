@@ -37,7 +37,7 @@ namespace Vektorel.Web.KitapBankosuApp.Areas.Admin.Controllers
                 ctx.Yazarlar.Add(y);
                 ctx.SaveChanges();
             }
-            return View();
+            return RedirectToAction("Index");
         }
 
         public ActionResult YazarDetay(int? id)
