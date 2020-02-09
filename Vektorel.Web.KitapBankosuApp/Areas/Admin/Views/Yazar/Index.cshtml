@@ -6,7 +6,7 @@
 }
 
 <h2>Yazar Yönetimi</h2>
-<a href="/Admin/Yazar/YazarEkle" class="btn btn-success">Yazar Ekle</a>
+<button class="btn btn-success" data-toggle="modal" data-target="#mdlYazarEKle">Yazar Ekle</button>
 
 <table class="table">
     <thead>
@@ -25,11 +25,32 @@
                 <td>@item.YazarSoyad</td>
                 <td>@item.DogumTarih</td>
                 <td>
-                    <a href="Admin/Yazar/YazarDetay/@item.YazarId" class="btn btn-primary">Detaylar</a>&nbsp;
-                    <a href="#" class="btn btn-danger">Sil</a>
+                    <a href="/Admin/Yazar/YazarDetay/@item.YazarId" class="btn btn-primary">Detaylar</a>&nbsp;
+                    <a href="/Admin/Yazar/YazarSil/@item.YazarId" class="btn btn-danger">Sil</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+<!-- Modal -->
+<div class="modal fade" id="mdlYazarEKle" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
