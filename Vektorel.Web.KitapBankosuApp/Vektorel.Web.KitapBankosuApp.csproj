@@ -128,6 +128,7 @@
     <Compile Include="KitapBankosuContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Yazar.cs" />
+    <Compile Include="Models\YazarViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

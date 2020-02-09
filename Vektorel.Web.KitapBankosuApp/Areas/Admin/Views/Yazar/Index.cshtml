@@ -1,5 +1,5 @@
 ﻿@using Vektorel.Web.KitapBankosuApp.Models
-@model IEnumerable<Yazar>
+@model YazarViewModel
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -18,7 +18,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in Model.Yazarlar)
         {
             <tr>
                 <td>@item.YazarAd</td>
@@ -44,7 +44,27 @@
                 </button>
             </div>
             <div class="modal-body">
-                ...
+                <form role="form" action="/Admin/Yazar/YazarEkle" method="post">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Adı</label>
+                            <input type="text" class="form-control" name="YazarAd">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Soyadı</label>
+                            <input type="text" class="form-control" name="YazarSoyad">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputFile">Doğum Tarihi</label>
+                            <input type="date" class="form-control" name="DogumTarih">
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Kaydet</button>
+                    </div>
+                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -53,4 +73,22 @@
         </div>
     </div>
 </div>
+
+@section scripts {
+    <script>
+        function YazarEkle() {
+            $.ajax({
+                url: "/Admin/Yazar/YazarEkle",
+                type: "POST",
+                data: {
+                    Ad: $("#Yazar_Ad").val();,
+                    DogumTarih: $("#Yazar_DogumTarih").val()
+                },
+                success: function () {
+                    alert("Ekleme Başarılı");
+                }
+            })
+        }
+    </script>
+    }
 

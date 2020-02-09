@@ -13,7 +13,9 @@ namespace Vektorel.Web.KitapBankosuApp.Areas.Admin.Controllers
         // GET: Admin/Yazar
         public ActionResult Index()
         {
-            return View(ctx.Yazarlar.ToList());
+            YazarViewModel yvm = new YazarViewModel();
+            yvm.Yazarlar = ctx.Yazarlar.ToList();
+            return View(yvm);
         }
 
         [HttpGet]
